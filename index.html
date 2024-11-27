@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.5/dist/full.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/firebase@8.6.8/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('./hero.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax {
+            background-image: url('./bg-pattern.png');
+            height: 100vh;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="hero-bg h-screen flex flex-col justify-center items-center text-center text-white relative">
+        <h1 class="text-5xl md:text-7xl font-bold mb-5">Welcome to My Personal Space</h1>
+        <p class="text-xl md:text-2xl mb-5">Creating Moments, One Project at a Time</p>
+        <a href="#contact" class="btn btn-primary text-lg">Get In Touch</a>
+    </header>
+    <section id="about" class="py-20 bg-white text-center">
+        <h2 class="text-4xl font-bold mb-5">About Me</h2>
+        <p class="max-w-xl mx-auto mb-5">Hi! I'm a passionate creator with skills in web development, design, and digital marketing.</p>
+        <p class="mb-5">Skills: JavaScript, HTML5, CSS3, React, Firebase</p>
+        <p>Hobbies: Traveling, Photography, Coding, Gaming</p>
+    </section>
+    <section id="portfolio" class="py-20 bg-gray-200">
+        <h2 class="text-4xl font-bold text-center mb-10">My Work</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./project1.jpg" alt="Project 1" class="hover:scale-110 transition-transform duration-300"/></div>
+                <div class="swiper-slide"><img src="./project2.jpg" alt="Project 2" class="hover:scale-110 transition-transform duration-300"/></div>
+                <div class="swiper-slide"><img src="./project3.jpg" alt="Project 3" class="hover:scale-110 transition-transform duration-300"/></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    <section id="contact" class="parallax flex flex-col items-center justify-center text-white py-20">
+        <h2 class="text-4xl font-bold mb-5">Contact Me</h2>
+        <form class="bg-gray-800 p-5 rounded-lg shadow-lg">
+            <input type="text" placeholder="Your Name" class="input w-full mb-3" required/>
+            <input type="email" placeholder="Your Email" class="input w-full mb-3" required/>
+            <textarea placeholder="Your Message" class="textarea w-full mb-3" required></textarea>
+            <button type="submit" class="btn btn-secondary">Send Message</button>
+        </form>
+        <div class="flex gap-4 mt-5">
+            <a href="https://facebook.com" class="text-blue-600 hover:text-blue-800"><i class="material-icons">facebook</i></a>
+            <a href="https://tiktok.com" class="text-black hover:text-gray-800"><i class="material-icons">video_label</i></a>
+        </div>
+    </section>
+    <footer class="bg-gray-800 text-white py-5 text-center">
+        <p>&copy; 2023 My Personal Website | All Rights Reserved</p>
+        <a href="#about" class="text-gray-400 hover:text-gray-300">About</a> | <a href="#portfolio" class="text-gray-400 hover:text-gray-300">Portfolio</a> | <a href="#contact" class="text-gray-400 hover:text-gray-300">Contact</a>
+    </footer>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        ScrollReveal().reveal('#about', { duration: 1000 });
+        ScrollReveal().reveal('#portfolio', { duration: 1000 });
+        ScrollReveal().reveal('#contact', { duration: 1000 });
+    </script>
+</body>
+</html>
